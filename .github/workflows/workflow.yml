@@ -20,9 +20,9 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/pemira \
-            sudo git config --local user.name ${{ secrets.GITHUB_USERNAME }} \
-            sudo git config --local user.email ${{ secrets.GITHUB_EMAIL }} \
+            cd /var/www/pemira && \
+            sudo git config --local user.name ${{ secrets.GITHUB_USERNAME }} && \
+            sudo git config --local user.email ${{ secrets.GITHUB_EMAIL }} && \
             sudo git pull
 
       - name: Restart Nginx
