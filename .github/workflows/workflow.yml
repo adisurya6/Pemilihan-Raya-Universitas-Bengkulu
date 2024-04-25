@@ -3,7 +3,7 @@ name: SSH and Git Pull
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the workflow
+      - main
 
 jobs:
   deploy:
@@ -21,8 +21,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/pemira && \
-            sudo git config --local user.name ${{ secrets.GITHUB_USERNAME }} && \
-            sudo git config --local user.email ${{ secrets.GITHUB_EMAIL }} && \
+            sudo git config --local user.name ${{ secrets.GHUB_USERNAME }} && \
+            sudo git config --local user.email ${{ secrets.GHUB_EMAIL }} && \
             sudo git pull
 
       - name: Restart Nginx
