@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/pemira && sudo su && export PATH="$PATH:$HOME/opt/git/bin" && git pull
+            cd /var/www/pemira
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
