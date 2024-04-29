@@ -23,5 +23,5 @@ jobs:
             cd /var/www/pemira && sudo git pull
 
       - name: Restart Nginx
-        run: sudo systemctl restart nginx
+        run: sudo service nginx restart
 
