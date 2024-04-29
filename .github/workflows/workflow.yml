@@ -23,5 +23,5 @@ jobs:
             cd /var/www/pemira
 
       - name: Restart Nginx
-        run: sudo systemctl restart nginx
+        run: systemctl restart nginx
 
