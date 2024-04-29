@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/pemira
+            cd /var/www/pemira && ln -s "$(which bash)" /usr/bin/bash 
 
       - name: Restart Nginx
         run: systemctl restart nginx
